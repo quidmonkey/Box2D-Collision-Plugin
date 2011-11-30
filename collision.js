@@ -1,8 +1,12 @@
 // Written by Abraham Walters
 // Box2D Collision Plugin for Box2D
 // November 2011
-ig.module('plugins.box2d.collision')
-.requires('plugins.box2d.entity')
+ig.module(
+    'plugins.box2d.collision'
+)
+.requires(
+    'plugins.box2d.entity'
+)
 .defines(function () {
 
     ig.Box2DEntity.inject({

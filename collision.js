@@ -1,5 +1,5 @@
 // Written by Abraham Walters
-// Box2D Collision Plugin for Box2D
+// Box2D Collision Plugin for Impact
 // November 2011
 ig.module(
     'plugins.box2d.collision'

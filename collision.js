@@ -47,7 +47,7 @@ ig.module(
                 }
                 //else contact is a collision tile
                 else {
-                    //calculate points of contact
+                    //calculate tile
                     var tile = ig.game.collisionMap.getTile(x, y);
                     this.collideTile(tile, point, normal);
 

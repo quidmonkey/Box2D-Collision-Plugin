@@ -14,6 +14,7 @@ ig.module(
         init: function (x, y, settings) {
             this.parent(x, y, settings);
             this.body.entity = this;
+            this.shape = this.body.m_shapeList;
         },
 
         collision: function () {
@@ -39,8 +40,8 @@ ig.module(
                 var ent = edge.other.entity;
                 if (ent) {
                     //test for groupIndex & mask bits
-                    var f1 = ent.shape.m_filter,
-                        f2 = this.shape.m_filter;
+                    var f1 = this..shape.m_filter,
+                        f2 = ent.shape.m_filter;
                     if (f1.groupIndex != f2.groupIndex || f1.groupIndex > 0 || f1.categoryBits == f2.maskBits) {
                         this.collideEntity(ent, point, normal);
                     }

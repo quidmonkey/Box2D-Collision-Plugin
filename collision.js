@@ -30,7 +30,7 @@ ig.module(
 
                 //calculate point of contact
                 var x = this.pos.x + normal.x.map(1, -1, 0, 1) * this.size.x;
-                var y = this.pos.y + normal.y.map(-1, 1, 0, 1) * this.size.y;
+                var y = this.pos.y + normal.y.map(1, -1, 0, 1) * this.size.y;
                 var point = {
                     x: x,
                     y: y

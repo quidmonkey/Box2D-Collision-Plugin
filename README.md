@@ -1,4 +1,14 @@
-This plugin is allows you to get Box2d collision data in the ImpactJS game engine. It is for Box2d v2.0.2.
+# Box2d-Collision-Plugin for ImpactJS
+
+This plugin is allows you to get Box2d collision data in the [ImpactJS](http://impactjs.com/) engine. It is for Box2d v2.0.2.
+
+## Version 2.0
+
+Simply include this plugin in your main.js, and it seamleesly integrates with Impact's collision api. Both ```check``` and ```collideWith``` methods will be called as usual, and ```checkAgainst``` and ```type``` properties are both used to verify that the check method should be called. Only the ```collides``` is no longer meaningful, as Box2d uses its own collision resolution system. See the notes below regarding groupIndices and mask bits for additional info on how to use Box2d.
+
+Finally, a big thanks to both Xatruch and pixelpusher over on the [ImpactJS forums](http://impactjs.com/forums/code/box2d-collision-plugin) for helping with this rewrite of the plugin. This code is as much theirs as it is mine.
+
+## Version 1.0
 
 To use the plugin, override collideEntity() within your Box2DEntity to grab info about the colliding Entity - this is comparable to Impact's collideWith(). To grab tile info, override collideTile() - this is comparable to handleMovementTrace().
 

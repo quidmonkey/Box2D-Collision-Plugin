@@ -43,17 +43,17 @@ ig.Box2DGame.inject({
             if (a.checkAgainst & b.type) {
                 a.check(b);
             }
-            
+
             if (b.checkAgainst & a.type) {
                 b.check(a);
             }
 
             // call impact
-            if (point.normal.y) {
+            // favor the axis of greater penetration
+            if (Math.abs(point.normal.y) > Math.abs(point.normal.x)) {
                 a.collideWith(b, 'y');
                 b.collideWith(a, 'y');
-            }
-            else {
+            } else {
                 a.collideWith(b, 'x');
                 b.collideWith(a, 'x');
             }

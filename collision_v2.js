@@ -20,16 +20,15 @@ ig.Box2DEntity.inject({
 
 ig.Box2DGame.inject({
 
-    // remove impact's collision detection
-    // for performance
+    // remove impact's collision detection for performance
+    // comment out this line if you're using both
+    // ig.Entity and ig.Box2dEntity
     checkEntities: function () {},
 
     loadLevel: function (data) {
         this.parent(data);
 
-        // create impact collision listener
-        var listener = new b2.ContactListener();
-        listener.Add = function(point){
+        var handleContact = function(point){
             var a = point.shape1.GetBody().entity,
                 b = point.shape2.GetBody().entity;
 
@@ -58,6 +57,10 @@ ig.Box2DGame.inject({
                 b.collideWith(a, 'x');
             }
         };
+
+        var listener = new b2.ContactListener();
+        listener.Add = handleContact;      // on first contact
+        listener.Persist = handleContact;  // on subsequent contacts
 
         // attach to box2d world
         ig.world.SetContactListener(listener);

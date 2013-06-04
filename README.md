@@ -6,7 +6,7 @@ This plugin is allows you to get Box2d collision data in the [ImpactJS](http://i
 
 Simply include this plugin in your main.js, and it seamleesly integrates with Impact's collision api. Both ```check``` and ```collideWith``` methods will be called as usual, and ```checkAgainst``` and ```type``` properties are both used to verify that the check method should be called. Only the ```collides``` is no longer meaningful, as Box2d uses its own collision resolution system. See the notes below regarding groupIndices and mask bits for additional info on how to use Box2d.
 
-Finally, a big thanks to both Xatruch and pixelpusher over on the [ImpactJS forums](http://impactjs.com/forums/code/box2d-collision-plugin) for helping with this rewrite of the plugin. This code is as much theirs as it is mine.
+Finally, a big thanks to Joncom, Xatruch and pixelpusher over on the [ImpactJS forums](http://impactjs.com/forums/code/box2d-collision-plugin) for helping with the rewrite of the plugin. This code is as much theirs as it is mine.
 
 ## Version 1.0
 
